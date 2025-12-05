@@ -12,6 +12,8 @@ I wanted to build something that looks good on mobile and has a search bar that 
 
 
 
+
+
 What it does (Features)
 
 Search Bar: You can type in the box and it filters the questions instantly! It searches both the question text and the tags.
@@ -27,6 +29,8 @@ Deep Linking: If you click the little chain icon 🔗 inside an answer, it copie
 React Button: I added a "Rate this Page" button at the very bottom using React.
 
 
+
+
  How to run it
 
  You don't need to install anything or use npm. I used CDNs for React so it runs directly in the browser.
@@ -36,6 +40,8 @@ React Button: I added a "Rate this Page" button at the very bottom using React.
 2.  Make sure index.html, style.css, and index.js are in the same folder.
 
 3.  Double-click index.html to open it in Chrome or Firefox.
+
+
 
 
 
@@ -54,6 +60,8 @@ FontAwesome (For the magnifying glass and hamburger menu icons).
 
 
 
+
+
 Things I learned / Challenges
 
 React without JSX: Since I'm not using a build tool like "Create React App," I had to write React using React.createElement. It’s kind of verbose and lots of brackets (( )), but I finally got the counter state to work!
@@ -61,6 +69,8 @@ React without JSX: Since I'm not using a build tool like "Create React App," I h
 The Mobile Menu: Making the hamburger menu work with just CSS (using the checkbox hack) and then also making it close when you click a link was tricky.
 
 The Search Filter: I learned how to use .filter() and .includes() in JavaScript to sort through the faqData array.
+
+
 
 
 
