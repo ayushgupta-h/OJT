@@ -156,37 +156,40 @@ var searchInput = document.getElementById('search-input');
 var resultsList = document.getElementById('results-list');
 
 function renderList(listData) {
-
   resultsList.innerHTML = "";
 
   if (listData.length === 0) {
+
     resultsList.innerHTML = "<p>No questions found.</p>";
     return;
   }
 
   for (var i = 0; i < listData.length; i++) {
-
     var item = listData[i];
 
-    var htmlCode = "<div class='faq-item'>";
+    var htmlCode = "<div class='faq-item' id='" + item.id + "'>";
 
     htmlCode += "<button class='faq-question'>";
+
     htmlCode += item.question;
     htmlCode += "<i class='fas fa-chevron-down'></i>";
     htmlCode += "</button>";
 
     htmlCode += "<div class='faq-answer'>";
-
     htmlCode += "<p>" + item.answer + "</p>";
+    
     htmlCode += "<span class='faq-tag'>" + item.tag + "</span>";
+    
+    htmlCode += "<div class='copy-link-btn' onclick='copyLink(\"" + item.id + "\")'>";
+    htmlCode += "<i class='fas fa-link'></i> ";
     htmlCode += "</div>";
-
-    htmlCode += "</div>";
+    
+    htmlCode += "</div>"; 
+    htmlCode += "</div>"; 
 
     resultsList.innerHTML += htmlCode;
   }
 }
-
 searchInput.oninput = function () {
 
   var val = searchInput.value.toLowerCase();
@@ -234,6 +237,7 @@ resultsList.addEventListener('click', function (e) {
 });
 
 function checkDeepLink() {
+
         const hash = window.location.hash.substring(1); 
         if (hash) {
             const targetElement = document.getElementById(hash);
@@ -250,24 +254,27 @@ function checkDeepLink() {
     function copyLink(id) {
         const url = window.location.href.split('#')[0] + '#' + id;
         navigator.clipboard.writeText(url).then(() => { alert("Link copied!\n" + url); });
+
     }
 
     renderList(faqData);
     setTimeout(checkDeepLink, 100);
 
 
-    // This is a pure React Functional Component
-    // Since we don't have Babel (JSX), we use React.createElement
-    
-    function PageRating() {
-      // Use standard React Hook
+   
+
+
+
+     function PageRating() {
       const [rating, setRating] = React.useState(0);
 
       return React.createElement(
         'div', 
-        { className: 'react-box' }, // properties (props)
+        { className: 'react-box' },
+
         [
           React.createElement('span', { key: 'text' }, `Rate this FAQ: ${rating} `),
+
           React.createElement(
             'button', 
             { 
@@ -281,6 +288,7 @@ function checkDeepLink() {
       );
     }
 
-    // Mount the component to the div with id="react-root"
+
     const root = ReactDOM.createRoot(document.getElementById('react-root'));
+    
     root.render(React.createElement(PageRating));
