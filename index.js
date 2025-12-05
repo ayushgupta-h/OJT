@@ -10,8 +10,10 @@ const faqData = [
     question: 'How does the Virtual DOM work?',
     answer: 'The Virtual DOM is a lightweight copy of the actual DOM. When state changes, React updates the Virtual DOM first. It then compares this new version with the previous one (diffing) and updates only the parts of the real DOM that have changed (reconciliation), improving performance.',
     tag: 'React'
+    
   },
   {
+    
     id: 'react-hooks-introduction',
     question: 'What are React Hooks and why should I use them?',
     answer: 'Hooks are functions that let you use state and other React features without writing a class. They allow you to reuse stateful logic between components (via custom hooks) and organize code by related pieces rather than by lifecycle methods.',
